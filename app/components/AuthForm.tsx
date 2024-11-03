@@ -17,11 +17,7 @@ import {
 } from '../../@/components/ui/form';
 import { Input } from '../../@/components/ui/input';
 import CustomInput from './customInput'
-
-const formSchema = z.object({
-  email: z
-    .string().email()
-  });
+import { formSchema } from '../../lib/utils';
 
 const AuthForm = ({ type }: { type: String }) => {
   const [user, setUser] = useState(null);
@@ -77,9 +73,7 @@ const AuthForm = ({ type }: { type: String }) => {
               
              <CustomInput control={form.control} name='username' label='UserName' placeholder='Enter you username' type='text' />
              <CustomInput control={form.control} name='password' label='Password' placeholder='Enter you Password' type='password' />
-             
-      
-      
+    
               <Button type="submit" disabled={loading}>
                 {loading ? 'Submitting...' : 'Submit'}
               </Button>
