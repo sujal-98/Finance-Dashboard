@@ -4,6 +4,9 @@ import Link from 'next/link'
 import BankCard from './BankCard'
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
+  
+  {console.log("right side bar",banks)}
+  
   return (
     <aside className='right-sidebar p-4 bg-gray-100 shadow-lg rounded-xl'> {/* Reduced padding */}
       <section className="profile-section flex flex-col items-center pb-4 mt-0 mb-8"> {/* Reduced bottom margin */}
@@ -14,7 +17,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
           </div>
           <div className="profile-details mt-4 text-center"> {/* Reduced top margin */}
             <h1 className="profile-name text-lg font-semibold text-gray-800"> {/* Reduced text size */}
-              {user.firstName} {user.lastName}
+              {user.firstName} 
             </h1>
             <p className="profile-email text-xs text-gray-500"> {/* Reduced text size */}
               {user.email}

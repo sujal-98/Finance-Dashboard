@@ -5,10 +5,13 @@ import { cookies } from "next/headers";
 
 export async function createSessionClient() {
   const client = new Client()
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT);
+    .setEndpoint(process.env.APPWRITE_ENDPOINT)
+    .setProject(process.env.APPWRITE_PROJECT)
+    console.log(cookies());
 
-  const session = cookies().get("apprwite-session");
+    console.log(cookies().get('cookie'));
+
+  const session = cookies().get("cookie");
 
   if (!session || !session.value) {
     throw new Error("No session");
@@ -25,9 +28,9 @@ export async function createSessionClient() {
 
 export async function createAdminClient() {
   const client = new Client()
-    .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
-    .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT)
-    .setKey(process.env.NEXT_APPWRITE_KEY);
+    .setEndpoint(process.env.APPWRITE_ENDPOINT)
+    .setProject(process.env.APPWRITE_PROJECT)
+    .setKey(process.env.APPWRITE_SECRET);
 
   return {
     get account() {

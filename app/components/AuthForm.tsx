@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,13 +9,12 @@ import { Button } from '../../@/components/ui/button';
 import {
   Form
 } from '../../@/components/ui/form';
-import { Input } from '../../@/components/ui/input';
 import CustomInput from './customInput'
 import { formSchema } from '../../lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import SignUp from '../(auth)/sign-up/page';
-import { signIn } from '../../lib/actions/user.actions';
+import { signIn, signUp } from '../../lib/actions/user.actions';
+import PlaidLink from './PlaidLink';
 
 const AuthForm = ({ type }: { type: string }) => {
   const router=useRouter();
@@ -27,15 +26,31 @@ const AuthForm = ({ type }: { type: string }) => {
     resolver: zodResolver(schema),
     defaultValues: {
       email: '',
+      password:''
     },
   });
+  useEffect(() => {
+    console.log("Validation Errors:", form.formState.errors);
+  }, [form.formState.errors])
 
-  async function onSubmit(values: z.infer<typeof schema>) {
-    setLoading(true); // Start loading
-
+  async function onSubmit(data: z.infer<typeof schema>) {
+    setLoading(true); 
     try {
       if(type==='sign-up'){
-        const newUser=await SignUp(data)
+        const userData = {
+            firstName: data.firstName!,
+            lastName: data.lastName!,
+            address1: data.address!,
+            state: data.state!,
+            postalCode: data.postalCode!,
+            dateOfBirth: data.dob!,
+            ssn: data.ssn!,
+            email: data.email,
+            password: data.password,
+            city:data.city
+          }
+          const newUser = await signUp(userData);
+        console.log("new user: ",newUser)
         setUser(newUser)
       }
       else if(type==='sign-in'){
@@ -43,12 +58,13 @@ const AuthForm = ({ type }: { type: string }) => {
           email:data.email,
           password:data.password,
         })
+        console.log("resp ",resp)
         if(resp) router.push('/')
       }
     } catch (error) {
       console.error('Error during sign-in:', error);
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   }
 
@@ -71,7 +87,7 @@ const AuthForm = ({ type }: { type: string }) => {
 
       {user ? (
         <div className="flex flex-col gap-4">
-          {/* Plaid Link logic */}
+          <PlaidLink user={user} variant="primary" />
         </div>
       ) : (
         <>
@@ -88,6 +104,7 @@ const AuthForm = ({ type }: { type: string }) => {
               <CustomInput control={form.control} name='state' label='State' placeholder='ex: Delhi' type='text' />
               <CustomInput control={form.control} name='postalCode' label='Postal Code' placeholder='ex:110092' type='text' />
               </div>
+              <CustomInput control={form.control} name='city' label='city' placeholder='ex:new delhi' type='text' />
               <div className="flex gap-4">
               <CustomInput control={form.control} name='dob' label='Date Of Birth' placeholder='yyyy-mm-dd' type='date' />
               <CustomInput control={form.control} name='ssn' label='SSN' placeholder='ex: 1234' type='text' />
@@ -95,6 +112,7 @@ const AuthForm = ({ type }: { type: string }) => {
               </>
             )}
              <CustomInput control={form.control} name='username' label='UserName' placeholder='Enter you username' type='text' />
+             <CustomInput control={form.control} name='email' label='Email' placeholder='Enter you email' type='email' />
              <CustomInput control={form.control} name='password' label='Password' placeholder='Enter you Password' type='password' />
              <Button 
   type="submit" 
@@ -114,7 +132,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </form>
           </Form>
         </>
-      )}
+       )} 
       <footer className="flex justify-center gap-1">
             <p className="text-14 font-normal text-gray-600">
               {type === 'sign-in'

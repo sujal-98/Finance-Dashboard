@@ -209,6 +209,7 @@ export const formSchema = (type:string)=>{
   state:type==='sign-in'? z.string().min(2).optional():z.string().min(2),
   postalCode:type==='sign-in'? z.string().min(3).optional():z.string().min(3),
   dob:type==='sign-in'? z.string().min(3).optional():z.string().min(3),
-  ssn:type==='sign-in'? z.string().min(3).optional():z.string().min(3)
+  ssn:type==='sign-in'? z.string().min(3).optional():z.string().min(3),
+  city:type==='sign-in'? z.string().min(2).optional():z.string().min(2)
 }))
 };
