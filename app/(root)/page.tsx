@@ -13,6 +13,7 @@ const Home =async ({searchParams:{id,page}}:SearchParamProps) => {
 const currentPage=Number(page as String) || 1
 
   const loggedIn=  await getLoggedInUser()
+  if(!loggedIn) redirect('/sign-in')
 console.log(loggedIn)
 const accounts=await getAccounts({
   userId:loggedIn.$id
@@ -25,7 +26,7 @@ const account=await getAccount({appwriteItemId})
 
 console.log("logged ",loggedIn);
 console.log("account ",account);
-if(!loggedIn) redirect('/sign-in')
+
 
   return (
     

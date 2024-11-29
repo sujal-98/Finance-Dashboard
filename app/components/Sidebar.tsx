@@ -17,7 +17,7 @@ const Sidebar = ({ user }: SidebarProps) => {
   const pathname = usePathname();
 
   return (
-    <div className="sidebar bg-gray-900 min-h-screen w-64 px-6 py-8 text-white shadow-lg border-r border-gray-700">
+    <div className="sidebar bg-gray-900 min-h-screen w-64 px-6 py-8 text-white shadow-lg border-r border-gray-700 z-40">
       <nav className="flex flex-col gap-8">
         <Link href="/" className="flex items-center gap-4 mb-10">
           <Image
