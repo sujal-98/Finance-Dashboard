@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import HeaderBox from '../components/HeaderBox';
 import TotalBalanceBox from '../components/TotalBalanceBox';
 import RightSidebar from '../components/RightSidebar'
@@ -11,6 +11,16 @@ import RecentTransactions from '../components/recentTransactions';
 const Home =async ({searchParams:{id,page}}:SearchParamProps) => {
 
 const currentPage=Number(page as String) || 1
+useEffect(() => {
+  const checkLoggedIn = async () => {
+    const loggedIn = await getLoggedInUser();
+    if (!loggedIn) {
+      redirect('/sign-in');
+    }
+  };
+
+  checkLoggedIn();
+}, []);
 
   const loggedIn=  await getLoggedInUser()
   if(!loggedIn) redirect('/sign-in')
