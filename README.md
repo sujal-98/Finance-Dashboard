@@ -1,18 +1,24 @@
-Finance Dashboard - Horizon
+# Horizon Finance Dashboard
 
-Horizon is a cutting-edge financial SaaS platform designed to revolutionize the way users manage their finances. With its seamless integration with multiple bank accounts and real-time updates, Horizon enables users to monitor transactions, transfer funds, and gain valuable insights into their financial health.
+Horizon is a cutting-edge financial SaaS platform designed to revolutionize the way users manage their finances. With seamless integration with multiple bank accounts and real-time updates, Horizon empowers users to monitor transactions, transfer funds, and gain valuable insights into their financial health.
 
-🚀 Getting Started
-Open Using Daytona
-Install Daytona: Follow the Daytona installation guide.
-Create the Workspace:
-daytona create <REPO_URL> 
-... MORE STEPS IF NEEDED ...
+## 🚀 Getting Started
+
+### 1. Install Daytona
+Follow the Daytona installation guide to get started with the application.
+
+### 2. Create the Workspace
+Run the following command to create a new workspace:
+
+```bash
+daytona create <REPO_URL>
+
 
 Start the Application:
+```bash
 npm run dev
 
-Features
+### Features
 
 Authentication
 
