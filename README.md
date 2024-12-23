@@ -2,24 +2,6 @@
 
 Horizon is a cutting-edge financial SaaS platform designed to revolutionize the way users manage their finances. With seamless integration with multiple bank accounts and real-time updates, Horizon empowers users to monitor transactions, transfer funds, and gain valuable insights into their financial health.
 
-
-# 🚀 Getting Started
-
-### 1. Install Daytona
-Follow the Daytona installation guide to get started with the application.
-
-### 2. Create the Workspace
-Run the following command to create a new workspace:
-
-```bash
-daytona create <REPO_URL>
-```
-
-### 3. Start the Application:
-```bash
-npm run dev
-```
-
 # ✨ Features
 
 ### 1. Authentication
