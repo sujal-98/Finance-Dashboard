@@ -20,7 +20,7 @@ daytona create <REPO_URL>
 npm run dev
 ```
 
-# Features
+# ✨ Features
 
 ### 1. Authentication
 
