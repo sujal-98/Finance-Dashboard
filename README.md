@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Finance Dashboard - Horizon
 
-## Getting Started
+Horizon is a cutting-edge financial SaaS platform designed to revolutionize the way users manage their finances. With its seamless integration with multiple bank accounts and real-time updates, Horizon enables users to monitor transactions, transfer funds, and gain valuable insights into their financial health.
 
-First, run the development server:
+🚀 Getting Started
+Open Using Daytona
+Install Daytona: Follow the Daytona installation guide.
+Create the Workspace:
+daytona create <REPO_URL> 
+... MORE STEPS IF NEEDED ...
 
-```bash
+Start the Application:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ultra-secure Server-Side Rendering (SSR) authentication.
 
-## Learn More
+Comprehensive validations and authorization protocols to protect user data.
 
-To learn more about Next.js, take a look at the following resources:
+Connect Banks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Integration with Plaid to link multiple bank accounts effortlessly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Secure and reliable bank account linking functionality.
 
-## Deploy on Vercel
+Home Page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Provides a general overview of the user’s financial standing.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Displays:
+
+Total balance across all connected bank accounts.
+
+Recent transactions.
+
+Spending categorized by expense types.
+
+My Banks
+
+Lists all connected banks with:
+
+Respective balances.
+
+Detailed account information.
+
+Transaction History
+
+Complete transaction history with:
+
+Pagination for smooth navigation.
+
+Filtering options to sort and find transactions by date, category, or bank account.
+
+Real-Time Updates
+
+Automatic reflection of changes across relevant pages when new bank accounts are connected or transactions are made.
+
+Funds Transfer
+
+Facilitates secure fund transfers using Dwolla.
+
+Features include:
+
+Easy-to-use forms with required fields.
+
+Recipient bank ID validation for secure transfers.
+
+Responsiveness
+
+Fully responsive design:
+
+Adapts to desktop, tablet, and mobile devices.
+
+Ensures a consistent user experience across various screen sizes.
+
+Code Architecture
+
+Highly modular and reusable codebase for scalability and maintainability.
+
+Adheres to industry best practices for performance optimization.
+
+Technology Stack
+
+Next.js: Framework for server-rendered React applications.
+
+Plaid: API integration for secure bank account linking.
+
+Dwolla: Platform for money transfers.
+
+React: Frontend framework for building interactive UI components.
+
+Node.js: Backend for handling API requests and business logic.
+
+Tailwind CSS: Styling framework for responsive and modern UI.

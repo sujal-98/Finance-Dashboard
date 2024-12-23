@@ -1,0 +1,22 @@
+{
+    "name": "Next.js Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+    "forwardPorts": [
+      3000
+    ],
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "javascript.validate.enable": true,
+          "typescript.enablePromptUseWorkspaceTsdk": true
+        },
+        "extensions": [
+          "esbenp.prettier-vscode",
+          "dbaeumer.vscode-eslint",
+          "vscode.html-language-features",
+          "vscode.typescript-language-features"
+        ]
+      }
+    },
+    "postCreateCommand": "npm install"
+  }
