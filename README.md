@@ -12,15 +12,14 @@ Run the following command to create a new workspace:
 
 ```bash
 daytona create <REPO_URL>
+```
 
-
-Start the Application:
+### 3. Start the Application:
 ```bash
 npm run dev
+```
 
 ### Features
-
-Authentication
 
 Ultra-secure Server-Side Rendering (SSR) authentication.
 
