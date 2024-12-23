@@ -21,29 +21,31 @@ npm run dev
 
 ### Features
 
+## 1. Authentication
+
 Ultra-secure Server-Side Rendering (SSR) authentication.
 
 Comprehensive validations and authorization protocols to protect user data.
 
-Connect Banks
+## 2. Connect Banks
 
 Integration with Plaid to link multiple bank accounts effortlessly.
 
 Secure and reliable bank account linking functionality.
 
-Home Page
+## 3. Home Page
 
 Provides a general overview of the user’s financial standing.
 
-Displays:
+## 4. Displays:
 
 Total balance across all connected bank accounts.
 
-Recent transactions.
+## 5. Recent transactions.
 
 Spending categorized by expense types.
 
-My Banks
+## 6. My Banks
 
 Lists all connected banks with:
 
@@ -51,7 +53,7 @@ Respective balances.
 
 Detailed account information.
 
-Transaction History
+## 7. Transaction History
 
 Complete transaction history with:
 
@@ -59,7 +61,7 @@ Pagination for smooth navigation.
 
 Filtering options to sort and find transactions by date, category, or bank account.
 
-Real-Time Updates
+## 8. Real-Time Updates
 
 Automatic reflection of changes across relevant pages when new bank accounts are connected or transactions are made.
 
@@ -67,27 +69,21 @@ Funds Transfer
 
 Facilitates secure fund transfers using Dwolla.
 
-Features include:
 
-Easy-to-use forms with required fields.
-
-Recipient bank ID validation for secure transfers.
-
-Responsiveness
-
-Fully responsive design:
+### Responsiveness
 
 Adapts to desktop, tablet, and mobile devices.
 
 Ensures a consistent user experience across various screen sizes.
 
-Code Architecture
+### Code Architecture
 
 Highly modular and reusable codebase for scalability and maintainability.
 
 Adheres to industry best practices for performance optimization.
 
-Technology Stack
+
+### Technology Stack
 
 Next.js: Framework for server-rendered React applications.
 
