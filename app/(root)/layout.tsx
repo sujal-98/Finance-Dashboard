@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Sidebar from '../components/Sidebar';
 import Image from "next/image";
 import { MobileNav } from '../components/MobileNav';
@@ -11,8 +11,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
  
-const loggedIn=await getLoggedInUser()
-console.log("loggedIn")
+
+  const loggedIn=  await getLoggedInUser()
+  if(!loggedIn) redirect('/sign-in')
 
   return (
     <main className="flex h-screen w-full font-inter">

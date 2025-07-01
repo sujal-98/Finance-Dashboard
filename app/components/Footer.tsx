@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { logoutAccount } from '../../lib/actions/user.actions'
 import { useRouter } from 'next/navigation';
