@@ -4,6 +4,30 @@ A full-stack banking application built with Next.js 14, featuring secure bank in
 
 ## 🏗️ Architecture Overview
 
+### System Architecture Diagram
+
+```mermaid
+graph TD
+    subgraph Frontend
+        A[Next.js App] --> B[Components]
+        B --> C[Auth Forms]
+        B --> D[Bank Management]
+        B --> E[Transaction History]
+        B --> F[Payment Transfer]
+    end
+    
+    subgraph Backend Services
+        G[Plaid API] --> H[Bank Account Data]
+        I[Appwrite] --> J[User Management]
+        I --> K[Transaction Storage]
+        L[Dwolla] --> M[Payment Processing]
+    end
+    
+    A --> G
+    A --> I
+    A --> L
+```
+
 The application follows a modern, scalable architecture:
 
 ### Frontend
@@ -43,6 +67,37 @@ The application follows a modern, scalable architecture:
    - Transfer status tracking
 
 ## 📊 Database Design
+
+### Entity Relationship Diagram
+
+```mermaid
+erDiagram
+    User ||--o{ Bank : has
+    User {
+        string id
+        string email
+        string name
+    }
+    Bank ||--o{ Transaction : contains
+    Bank {
+        string id
+        string userId
+        string accessToken
+        string sharableId
+        string institutionId
+    }
+    Transaction {
+        string id
+        string bankId
+        float amount
+        string type
+        string category
+        string channel
+        datetime createdAt
+        string senderBankId
+        string receiverBankId
+    }
+```
 
 ### Collections
 
